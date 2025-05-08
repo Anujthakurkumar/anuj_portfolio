@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuj Kumar - Cyber Security Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #0D1117; /* GitHub dark background */
+            color: #C9D1D9; /* GitHub dark text */
+            line-height: 1.8;
+        }
+        .font-display {
+            font-family: 'Press Start 2P', cursive;
+        }
+        .terminal-green {
+            color: #39FF14; /* Bright green */
+        }
+        .terminal-blue {
+            color: #50C8FF; /* Bright blue for links/accents */
+        }
+        .terminal-header {
+            font-family: 'Press Start 2P', cursive;
+            color: #39FF14;
+            font-size: 1.5rem; /* 24px */
+            margin-bottom: 1rem;
+            text-shadow: 0 0 5px #39FF14;
+        }
+        .section-container {
+            border: 1px solid #30363D; /* GitHub dark border */
+            background-color: #161B22; /* GitHub dark lighter background */
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .section-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(57, 255, 20, 0.3); /* Green shadow on hover */
+        }
+        .cursor {
+            display: inline-block;
+            background-color: #39FF14;
+            width: 10px;
+            height: 1.5em;
+            animation: blink 1s step-end infinite;
+            margin-left: 2px;
+            vertical-align: bottom;
+        }
+        @keyframes blink {
+            from, to { background-color: transparent; }
+            50% { background-color: #39FF14; }
+        }
+        .prompt {
+            color: #50C8FF; /* Blue prompt */
+        }
+        .card {
+            background-color: #0D1117; /* Darker card background */
+            border: 1px solid #30363D;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            border-color: #39FF14;
+            transform: scale(1.02);
+        }
+        .tag {
+            background-color: #21262D; /* GitHub dark tag background */
+            color: #50C8FF;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            border: 1px solid #30363D;
+        }
+        .achievement-item::before {
+            content: "🏆";
+            margin-right: 0.75rem;
+            color: #FFD700; /* Gold color for trophy */
+        }
+        .certificate-item::before {
+            content: "📜";
+            margin-right: 0.75rem;
+            color: #A0AEC0; /* Light gray for certificate scroll */
+        }
+        .nav-link {
+            font-family: 'Press Start 2P', cursive;
+            color: #50C8FF;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            padding: 0.5rem 1rem;
+            border: 1px solid transparent;
+        }
+        .nav-link:hover {
+            color: #39FF14;
+            text-shadow: 0 0 5px #39FF14;
+            border-color: #39FF14;
+            border-radius: 4px;
+        }
+
+        /* Scrollbar styling for a more thematic feel */
+        ::-webkit-scrollbar {
+            width: 12px;
+            background-color: #0D1117;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #39FF14;
+            border-radius: 10px;
+            border: 2px solid #0D1117;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: #161B22;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="sticky top-0 z-50 bg-opacity-80 backdrop-blur-md bg-[#0D1117] border-b border-[#30363D] shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="font-display text-xl terminal-green">AnujKumar_CV:></div>
+                <nav class="hidden md:flex space-x-4">
+                    <a href="#objective" class="nav-link">Objective</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#certificates" class="nav-link">Certs</a>
+                    <a href="#achievements" class="nav-link">Achievements</a>
+                    <a href="#education" class="nav-link">Education</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl terminal-green"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+                <a href="#objective" class="block nav-link text-center">Objective</a>
+                <a href="#skills" class="block nav-link text-center">Skills</a>
+                <a href="#projects" class="block nav-link text-center">Projects</a>
+                <a href="#certificates" class="block nav-link text-center">Certs</a>
+                <a href="#achievements" class="block nav-link text-center">Achievements</a>
+                <a href="#education" class="block nav-link text-center">Education</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-6 lg:p-8 mt-8">
+        <section id="hero" class="mb-12 text-center">
+            <div class="bg-[#161B22] p-6 rounded-lg shadow-xl border border-[#30363D]">
+                <h1 class="font-display text-3xl sm:text-4xl md:text-5xl mb-4">
+                    <span class="prompt">>&nbsp;</span><span id="typed-name"></span>
+                </h1>
+                <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-6">
+                    <span class="prompt">>&nbsp;</span><span id="typed-title"></span>
+                </p>
+                <div class="flex justify-center space-x-6 text-2xl">
+                    <a href="https://www.linkedin.com/in/anuj-kumar-bb1954260" target="_blank" class="terminal-blue hover:terminal-green transition-colors duration-300"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:Tanuj9528@gmail.com" class="terminal-blue hover:terminal-green transition-colors duration-300"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/Anujthakurkumar" target="_blank" class="terminal-blue hover:terminal-green transition-colors duration-300"><i class="fab fa-github"></i></a>
+                    <a href="tel:+917508860576" class="terminal-blue hover:terminal-green transition-colors duration-300"><i class="fas fa-mobile-alt"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="objective" class="section-container">
+            <h2 class="terminal-header">Objective.exe</h2>
+            <p id="typed-objective" class="text-gray-300"></p>
+        </section>
+
+        <section id="skills" class="section-container">
+            <h2 class="terminal-header">Skills_Matrix.dll</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div>
+                    <h3 class="font-bold text-xl terminal-green mb-2">Programming Languages:</h3>
+                    <ul class="list-disc list-inside ml-4 text-gray-300">
+                        <li><span class="prompt">C:\></span> C</li>
+                        <li><span class="prompt">C:\></span> SQL</li>
+                        <li><span class="prompt">C:\></span> Python</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl terminal-green mb-2">Frameworks:</h3>
+                    <ul class="list-disc list-inside ml-4 text-gray-300">
+                        <li><span class="prompt">C:\></span> HTML</li>
+                        <li><span class="prompt">C:\></span> CSS</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl terminal-green mb-2">Tools/Platforms:</h3>
+                    <ul class="list-disc list-inside ml-4 text-gray-300">
+                        <li><span class="prompt">C:\></span> MySQL</li>
+                        <li><span class="prompt">C:\></span> MS Word</li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2 lg:col-span-1">
+                    <h3 class="font-bold text-xl terminal-green mb-2">Soft Skills:</h3>
+                    <ul class="list-disc list-inside ml-4 text-gray-300">
+                        <li><span class="prompt">C:\></span> Problem-Solving</li>
+                        <li><span class="prompt">C:\></span> Team Player</li>
+                        <li><span class="prompt">C:\></span> Project Management</li>
+                        <li><span class="prompt">C:\></span> Adaptability</li>
+                        <li><span class="prompt">C:\></span> Critical Thinker</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl terminal-green mb-2">Languages:</h3>
+                    <ul class="list-disc list-inside ml-4 text-gray-300">
+                        <li><span class="prompt">C:\></span> English</li>
+                        <li><span class="prompt">C:\></span> Hindi</li>
+                        <li><span class="prompt">C:\></span> Punjabi</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-container">
+            <h2 class="terminal-header">Projects_Archive.zip</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card p-6 rounded-lg">
+                    <h3 class="font-bold text-xl terminal-green mb-2">ESP32 Marauder - WiFi & Bluetooth Pentesting Tool</h3>
+                    <p class="text-gray-400 mb-3 text-sm">Configured and deployed the ESP32 Marauder toolkit to explore wireless network vulnerabilities and perform ethical hacking activities, including Wi-Fi scanning, deauthentication attacks, and BLE sniffing.</p>
+                    <p class="text-gray-500 text-xs mb-1"><strong class="terminal-blue">Tools Used:</strong> ESP32 Board, Marauder firmware, Arduino IDE</p>
+                    <p class="text-gray-500 text-xs"><strong class="terminal-blue">Skills Applied:</strong> Hardware-based penetration testing, WiFi reconnaissance, basic embedded systems</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <h3 class="font-bold text-xl terminal-green mb-2">Weather Prediction Website</h3>
+                    <p class="text-gray-400 mb-3 text-sm">Developed a real-time weather prediction website displaying temperature, humidity, and climate data in an interactive format.</p>
+                    <p class="text-gray-500 text-xs"><strong class="terminal-blue">Tech Stack:</strong> HTML, CSS, Java</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <h3 class="font-bold text-xl terminal-green mb-2">Water Scarcity Awareness Website</h3>
+                    <p class="text-gray-400 mb-3 text-sm">Created an interactive site to highlight water scarcity in Indian states, featuring a clickable map for state-specific water data and solutions.</p>
+                    <p class="text-gray-500 text-xs"><strong class="terminal-blue">Tech Stack:</strong> HTML, CSS, JavaScript, MySQL</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <h3 class="font-bold text-xl terminal-green mb-2">Scratch Game - Catch the Oranges</h3>
+                    <p class="text-gray-400 mb-3 text-sm">Created an interactive Scratch game where players control a bowl to catch oranges falling from the sky, with a real-time scoreboard to track points.</p>
+                    <p class="text-gray-500 text-xs"><strong class="terminal-blue">Tech Stack:</strong> Scratch platform (block-based coding)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates" class="section-container">
+            <h2 class="terminal-header">Certificates_Vault.secure</h2>
+            <ul class="space-y-3 text-gray-300">
+                <li class="certificate-item">Google Cybersecurity Specialization (Coursera)</li>
+                <li class="certificate-item">CS50's Introduction to Cybersecurity (Harvard Online)</li>
+                <li class="certificate-item">Ethical Hacking Workshop conducted in LPU</li>
+                <li class="certificate-item">Attended AI Tools workshop in LPU</li>
+            </ul>
+        </section>
+
+        <section id="achievements" class="section-container">
+            <h2 class="terminal-header">Achievements_Log.txt</h2>
+            <ul class="space-y-3 text-gray-300">
+                <li class="achievement-item">Participated in multiple Capture The Flag (CTF) competitions in 2024 and 2025, solving real-world cybersecurity challenges including web exploitation, cryptography, and reverse engineering.</li>
+                <li class="achievement-item">Awarded Silver medal in National Science Olympiad in 2019.</li>
+                <li class="achievement-item">First Prize Winner in School Cooking Competition for creativity and presentation skills in culinary arts.</li>
+                <li class="achievement-item">Gold Medalist - Inter School Badminton Championship.</li>
+                <li class="achievement-item">Aspiring to obtain certifications like CEH (Certified Ethical Hacker) and CompTIA Security+.</li>
+            </ul>
+        </section>
+
+        <section id="education" class="section-container">
+            <h2 class="terminal-header">Education_Record.dat</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="font-bold text-xl terminal-green">Lovely Professional University <span class="text-gray-400 text-sm">(Pursuing: 2024-2027)</span></h3>
+                    <p class="text-gray-300">Bachelor of Computer Application (Hons) Cyber Security</p>
+                    <p class="text-gray-500 text-sm">Punjab, India</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl terminal-green">Cambridge International School <span class="text-gray-400 text-sm">(April 2023 - March 2024)</span></h3>
+                    <p class="text-gray-300">Class 12th</p>
+                    <p class="text-gray-500 text-sm">Dasuya, Punjab</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-8 border-t border-[#30363D] mt-12">
+        <p class="text-gray-500">&copy; <span id="currentYear"></span> Anuj Kumar. System Online and Fully Operational.</p>
+        <p class="text-xs text-gray-600 mt-1">Powered by <span class="terminal-green">Caffeine</span> & <span class="terminal-blue">Code</span></p>
+    </footer>
+
+    <script>
+        // Typing animation function
+        function typeEffect(element, text, speed, addCursor = true) {
+            let i = 0;
+            element.innerHTML = ""; // Clear existing content
+            let initialCursor = "";
+            if (addCursor) {
+                initialCursor = '<span class="cursor"></span>';
+                element.innerHTML = initialCursor; // Add cursor immediately
+            }
+
+            function typing() {
+                if (i < text.length) {
+                    if (addCursor) {
+                        element.innerHTML = text.substring(0, i + 1) + initialCursor;
+                    } else {
+                        element.innerHTML = text.substring(0, i + 1);
+                    }
+                    i++;
+                    setTimeout(typing, speed);
+                } else {
+                    if (addCursor) {
+                        // Remove cursor after typing is complete for elements that should not retain it
+                        // For others, like the hero name/title, we might want to keep it.
+                        // For now, let's keep it for hero, remove for objective.
+                        if (element.id === 'typed-objective') {
+                             element.innerHTML = text; // Remove cursor
+                        }
+                    }
+                }
+            }
+            typing();
+        }
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when a link is clicked
+        const mobileNavLinks = mobileMenu.querySelectorAll('a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start' 
+                    });
+                }
+            });
+        });
+
+        // Trigger typing animations
+        const nameText = "Anuj Kumar";
+        const titleText = "Cyber Security Student & Web Developer";
+        const objectiveText = "A highly motivated and diligent B.C.A (hons.) Cyber Security student at Lovely Professional University eager to apply my skills in Programming, web development and cybersecurity. Seeking an opportunity to contribute to real world projects and further enhance my technical knowledge.";
+
+        // Start typing animations with a slight delay for better effect
+        setTimeout(() => {
+            typeEffect(document.getElementById('typed-name'), nameText, 100);
+        }, 500); // Delay for name
+
+        setTimeout(() => {
+            typeEffect(document.getElementById('typed-title'), titleText, 75);
+        }, 500 + nameText.length * 100 + 200); // Delay after name finishes
+
+        setTimeout(() => {
+            typeEffect(document.getElementById('typed-objective'), objectiveText, 30, true); // Slower speed for objective
+        }, 500 + nameText.length * 100 + 200 + titleText.length * 75 + 500); // Delay after title finishes
+
+
+        // Intersection Observer for fade-in animations on scroll (optional enhancement)
+        const sections = document.querySelectorAll('section');
+        const observerOptions = {
+            root: null, // relative to document viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% of item is visible
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    // observer.unobserve(entry.target); // Optional: stop observing after animation
+                }
+            });
+        };
+
+        const sectionObserver = new IntersectionObserver(observerCallback, observerOptions);
+
+        sections.forEach(section => {
+            section.style.opacity = '0'; // Initially hide sections
+            section.style.transform = 'translateY(20px)'; // Move them down slightly
+            section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            sectionObserver.observe(section);
+        });
+
+
+    </script>
+</body>
+</html>
